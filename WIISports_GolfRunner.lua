@@ -9,7 +9,20 @@ local scriptRunning = false
 
 function onScriptStart()
 	MsgBox("Script Started.")
+    
+    if not (file_exists(logfile)) then
+        local logFile = io.open(logfile, "a")
+        logFile:write("speed;ball1;ball2;ball3;ball4;ball5;ball6;ball7;ball8;ball9;ballScore\n")
+        logFile:close()
+    end
+    
 end
+
+function file_exists(name)
+   local f = io.open(name, "r")
+   return f ~= nil and io.close(f)
+end
+
 
 function onScriptCancel()
 	MsgBox("Script Ended.")
@@ -20,9 +33,9 @@ function onScriptUpdate()
     -- Since LUA seems to be blocking
 
    	if(iteration ~= 2000) then
-    iteration = iteration + 1
+        iteration = iteration + 1
     else
-    iteration = 1
+        iteration = 1
     
         local ball1 = ReadValue8(0x91B4CF7B)
         local ball2 = ReadValue8(0x91B4D6AB)
@@ -36,10 +49,9 @@ function onScriptUpdate()
         
         local ballScore = ball1 + ball2 + ball3 + ball4 + ball5 + ball6 + ball7 + ball8 + ball9
     
-    
         -- LUA needs to close the file to flush?
         local logFile = io.open(logfile, "a")
-        logFile:write("" .. speed - increment .. ";" .. ball1 .. ";".. ball2 .. ";".. ball3 .. ";".. ball4 .. ";".. ball5 .. ";".. ball6 .. ";".. ball7 .. ";".. ball8 .. ";".. ball9 .. ";".. ballScore .. ";\n")
+        logFile:write("" .. speed - increment .. ";" .. ball1 .. ";".. ball2 .. ";".. ball3 .. ";".. ball4 .. ";".. ball5 .. ";".. ball6 .. ";".. ball7 .. ";".. ball8 .. ";".. ball9 .. ";".. ballScore .. "\n")
         logFile:close()
         
     	if(scriptRunning == false) then
