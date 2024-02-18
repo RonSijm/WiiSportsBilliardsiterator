@@ -1,5 +1,21 @@
 # Wii Sports Billiards Iterator Script
 
+## Context:  
+https://www.youtube.com/watch?v=9Zay5lEeMlk
+
+Their discord:  
+https://discord.com/invite/zUe9gZ8YMg
+
+## What is this?
+This is a script for Wii Sports Billiards that:
+ - Loads a newgame state
+ - Increments the hit speed
+ - Runs the game
+ - Logs the result (balls in holes) in a csv file.
+
+This is part of researching the Billiards minigame in Wii Play, with the ultimate goal of determining the game's theoretical limit, and whether or not it's possible to sink all nine balls in one shot.
+
+
 ## Usage:
 
 Download latest Dolphin-Lua-Core from here: 
@@ -14,3 +30,4 @@ https://github.com/SwareJonge/Dolphin-Lua-Core/releases/tag/v3.5.1
 The script is probably kinda bad if you actually know LUA, but it has a bunch of weird things going on, but it works.
 
 It runs the game, records which balls were in, at which speed, and restarts.
+
