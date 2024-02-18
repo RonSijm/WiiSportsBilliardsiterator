@@ -15,6 +15,8 @@ This is a script for Wii Sports Billiards that:
 
 This is part of researching the Billiards minigame in Wii Play, with the ultimate goal of determining the game's theoretical limit, and whether or not it's possible to sink all nine balls in one shot.
 
+## Short demo vid of script:
+https://www.youtube.com/watch?v=vyIUO3vSlII
 
 ## Usage:
 
