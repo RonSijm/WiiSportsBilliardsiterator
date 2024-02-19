@@ -33,3 +33,9 @@ The script is probably kinda bad if you actually know LUA, but it has a bunch of
 
 It runs the game, records which balls were in, at which speed, and restarts.
 
+## TODO:
+
+This script current uses a memory write to set the exact speed.
+It would be better to use a TAS and actually use the pool cue instead.
+
+If you're ok with LUA and think you can do this, feel more than welcome to send a PR :)
