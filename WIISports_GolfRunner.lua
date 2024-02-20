@@ -12,7 +12,7 @@ function onScriptStart()
     
     if not (file_exists(logfile)) then
         local logFile = io.open(logfile, "a")
-        logFile:write("speed;ball1;ball2;ball3;ball4;ball5;ball6;ball7;ball8;ball9;ballScore\n")
+        logFile:write("time;speed;ball1;ball2;ball3;ball4;ball5;ball6;ball7;ball8;ball9;ballScore\n")
         logFile:close()
     end
     
@@ -55,9 +55,10 @@ function onScriptUpdate()
               
     	if(scriptRunning == false) then
 	        scriptRunning = true
-                       
+                 
+            local time = os.date("%Y%m%d%H%M%S")                 
             local logFile = io.open(logfile, "a")
-            logFile:write("" .. speed .. ";" .. ball1 .. ";".. ball2 .. ";".. ball3 .. ";".. ball4 .. ";".. ball5 .. ";".. ball6 .. ";".. ball7 .. ";".. ball8 .. ";".. ball9 .. ";".. ballScore .. "\n")
+            logFile:write("" .. time ";" .. speed .. ";" .. ball1 .. ";".. ball2 .. ";".. ball3 .. ";".. ball4 .. ";".. ball5 .. ";".. ball6 .. ";".. ball7 .. ";".. ball8 .. ";".. ball9 .. ";".. ballScore .. "\n")
             
             -- LUA needs to close the file to flush the write
             -- That's why it might seem weird I'm not just keeping the file handle open...

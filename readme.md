@@ -33,6 +33,11 @@ The script is probably kinda bad if you actually know LUA, but it has a bunch of
 
 It runs the game, records which balls were in, at which speed, and restarts.
 
+## Result examples: (9 ball-in-holes shots)
+
+https://www.youtube.com/watch?v=Iq3S-nC9uj0   
+https://www.youtube.com/watch?v=cfXNfqnnyUA   
+
 ## TODO:
 
 This script current uses a memory write to set the exact speed.
